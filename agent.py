@@ -21,7 +21,7 @@ You are a helpful assistant. You have access to the following tools:
 agent = create_agent(
     model="gpt-5-nano",
     tools=[get_weather, get_all_wizards, get_wizard_potions],
-    system_prompt=""
+    system_prompt=SYSTEM_PROMPT
 )
 
 
