@@ -47,5 +47,6 @@ while True:
     request = input()
     result = agent.invoke({"messages": [{"role": "user", "content": request}]})
     
-    print_response(result["messages"])
+    # print_response(result["messages"])
+    print(result["messages"][-1].content)
 

@@ -14,7 +14,7 @@ def get_weather(city: str) -> str:
 def get_all_wizards(runtime: ToolRuntime) -> str:
     """Get all available wizards"""
     
-    print('accessing get_all_wizards tool')
+    print('[Tool] Accessing get_all_wizards')
     response = requests.get("https://wizard-world-api.herokuapp.com/Wizards")
     
     if response.status_code == 200:
@@ -37,8 +37,7 @@ def get_all_wizards(runtime: ToolRuntime) -> str:
 def get_wizard_elixirs(wizard_name, wizard_elixirs_ids) -> str:
     """Get available elixirs for a particular wizard"""
 
-    print("acessing get_wizard_elixirs tool for wizard = " + wizard_name)
-    print("elixir map = ", wizard_elixirs_ids)
+    print("[Tool] Acessing get_wizard_elixirs tool for wizard = " + wizard_name)
 
     elixirs_info = [] 
 
