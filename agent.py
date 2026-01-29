@@ -9,12 +9,6 @@ import os
 if not os.environ.get("OPENAI_API_KEY"):
     os.environ["OPENAI_API_KEY"] = getpass.getpass("Enter your OpenAI API key: ")
 
-
-# Defining state
-# This was an idea for an approach but same result was achieved by better prompting. Leaving here for reference
-# class WizardState(AgentState):
-#     wizards: list[str]
-
 SYSTEM_PROMPT = """
 You are a helpful assistant. You have access to the following tools:
 
@@ -31,15 +25,6 @@ agent = create_agent(
     system_prompt=SYSTEM_PROMPT,
     # state_schema=WizardState
 )
-
-
-def print_response(result_messages): 
-    for msg in result_messages:
-        if isinstance(msg, AIMessage):
-            print("AI: " + msg.content)
-        if isinstance(msg, ToolMessage):
-            print("Tool: " + msg.content)
-
 
 while True:
     print("What would you like me to check?\n")
